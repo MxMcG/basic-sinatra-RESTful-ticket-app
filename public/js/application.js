@@ -27,12 +27,14 @@ $(document).ready(function() {
         $.ajax({
               url: path,
               method: "post",
-              dataType: "json",
+              dataType: "html",
               data: ticketData
         })
         .done(function(response){
           console.log(response);
+          $('#ticket-post').append(response);
           $('#new-ticket-form').hide();
+
           // next append new ticket to the home page and add to ticket feed (create ticket post)
         })
 

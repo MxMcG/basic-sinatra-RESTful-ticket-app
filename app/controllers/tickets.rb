@@ -12,9 +12,17 @@ end
 post '/users/:id/tickets/new' do
   if request.xhr?
     get_user
-    @user.tickets.create(params[:new_ticket])
-    return params[:new_ticket].to_json
+    @ticket = @user.tickets.create(params[:new_ticket])
+    p '8' * 100
+    p @ticket.id
+      return erb :'tickets/_new_ticket', layout: false
   end
 end
+
+get '/tickets/:id' do
+  @ticket = Ticket.find_by(id: params[:id])
+  erb :'/tickets/ticket'
+end
+
 
 # next, add ticket feed page
