@@ -1,0 +1,16 @@
+
+#create_account_btn {
+  width: 8em;
+
+}
+
+#register_btn {
+  color: blue;
+  margin: auto;
+  display: inline-block;
+}
+
+#login_btn {
+  margin: auto;
+  display: inline-block;
+}

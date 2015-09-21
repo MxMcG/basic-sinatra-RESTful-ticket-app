@@ -1,0 +1,10 @@
+<div id='new-ticket-form'>
+  <form method='post' action='/users/<%= @user.id %>/tickets/new'>
+    <input type='text' placeholder='atist' name='new_ticket[artist]'>
+    <input type='text' placeholder='date' name='new_ticket[date]'>
+    <input type='text' placeholder='location' name='new_ticket[location]'>
+    <input type='text' placeholder='time' name='new_ticket[time]'>
+    <input type='text' placeholder='price' name='new_ticket[price]'><br>
+    <input type='submit' value='post ticket'>
+  </form>
+</div>

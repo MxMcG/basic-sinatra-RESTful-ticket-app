@@ -1,0 +1,61 @@
+body {
+  background-color: #f2f2f2;
+}
+
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+th {
+  text-align: left;
+}
+
+#sign_up {
+  border: 1px lightblue solid;
+  width: 20em;
+  margin: auto;
+  text-align: center;
+  padding: 1em;
+}
+
+#sign_up input {
+  margin-top: 1em;
+  border-radius: 4px;
+}
+
+
+
+h1, h3 {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#login_form {
+  border: 1px lightblue solid;
+  width: 20em;
+  margin: auto;
+  text-align: center;
+  padding: 1em;
+  margin-top: 1em
+}
+
+
+#login_form input {
+  margin-top: 1em;
+  border-radius: 4px;
+}
+
+#new-ticket-form {
+  width: 30%;
+  margin: auto;
+  border: 1px black solid;
+  padding: 1em;
+};
+
+#new-ticket-form input {
+  display: inline-block;
+  padding: 6px;
+};
