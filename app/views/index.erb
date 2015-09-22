@@ -1,6 +1,17 @@
 <h1>Welcome to Ticket Creator</h1>
 
+<div id="login-logout">
+  <a href="/users/signup"><button id="register_btn" type="button">Create an account</button></a>
+  <a href="/users/login"><button id="login_btn" type="button">Login</button></a>
+</div>
 
-<a href="/users/signup"><button id="register_btn" type="button">Create an account</button></a>
+<div id="ticket-feed-main">
 
-<a href="/users/login"><button id="login_btn" type="button">Login</button></a>
+  <% @tickets.each do |ticket| %>
+
+    <% if ticket.user != nil %>
+    <h3>info: <a href="/tickets/<%= ticket.id %>"><%= ticket.artist + " | " + ticket.location + " | " + ticket.date + " | " + ticket.price %></a><br> posted by: <a href="/users/<%= ticket.user.id %>"><%= ticket.user.username %></a>
+    </h3>
+    <% end %>
+  <% end %>
+</div>

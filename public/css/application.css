@@ -58,6 +58,16 @@ h1, h3 {
   margin-top:  1em;
 }
 
+#login-logout {
+  margin: auto;
+  width: 16em;
+  text-align: center;
+}
+
+#login-logout button {
+  margin: 8px;
+}
+
 #login_form {
   border: 1px lightblue solid;
   width: 20em;

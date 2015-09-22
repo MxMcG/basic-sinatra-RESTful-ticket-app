@@ -32,7 +32,7 @@ $(document).ready(function() {
         })
         .done(function(response){
           console.log(response);
-          $('#ticket-post').append(response);
+          $('#ticket-post a').append(response);
           $('#new-ticket-form').hide();
 
           // next append new ticket to the home page and add to ticket feed (create ticket post)
