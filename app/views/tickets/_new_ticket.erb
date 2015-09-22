@@ -1,3 +1,7 @@
-<div id="ticket<%=@ticket.id%>">
-     <h3><a href="/tickets/<%= @ticket.id%>"><%= @ticket.artist %></a></h3>
-</div>
+
+<a href="/tickets/<%= @ticket.id%>">artist: <%= @ticket.artist %> | location: <%= @ticket.location %> |
+      date: <%= @ticket.date %> |
+      price: $<%= @ticket.price %></a>
+
+
+

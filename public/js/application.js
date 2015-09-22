@@ -15,8 +15,12 @@ $(document).ready(function() {
             dataType: "html"
     })
     .done(function(response){
-      $('#new-ticket').append(response);
-
+      if (typeof $('#new-ticket-form') !== undefined){
+        $('#new-ticket-form').remove();
+        $('#new-ticket').append(response);
+      }else{
+        $('#new-ticket').append(response);
+      }
       $('#new-ticket-form form').submit("click",function(event) {
         event.preventDefault();
 
@@ -32,8 +36,8 @@ $(document).ready(function() {
         })
         .done(function(response){
           console.log(response);
-          $('#ticket-post a').append(response);
-          $('#new-ticket-form').hide();
+          $('#ticket-post').append(response);
+          $('#new-ticket-form').remove();
 
           // next append new ticket to the home page and add to ticket feed (create ticket post)
         })

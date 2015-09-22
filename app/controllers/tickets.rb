@@ -24,5 +24,11 @@ get '/tickets/:id' do
   erb :'/tickets/ticket'
 end
 
+delete '/users/ticket/:id/' do
+  @ticket = Ticket.find_by(id: params[:id])
+  p @ticket
+  @ticket.destroy
+
+end
 
 # next, add ticket feed page

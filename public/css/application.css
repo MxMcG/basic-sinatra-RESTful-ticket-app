@@ -14,7 +14,6 @@ th {
 
 #ticket-post-wrapper {
   border: solid 1px black;
-  height: 46em;
   width: 30em;
   margin: auto;
   position: relative;
@@ -99,4 +98,5 @@ h1, h3 {
   width: 40%;
   border: solid 1px black;
 };
+
 
