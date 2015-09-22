@@ -1,8 +1,19 @@
 <h1>Hello, <%= @user.username %> welcome to tixzoo!</h1>
 
-<h3>Your registered email: <%= @user.email %>
+<h3>Your registered email: <%= @user.email %></h3>
 
-<h3>Would you like to <a href="/users/<%= @user.id %>/tickets/new">post a ticket?</h3><a/>
+<h3>Would you like to <a href="/users/<%= @user.id %>/tickets/new">post a ticket?</h3></a>
 
 <div id="new-ticket"></div>
-<div id="ticket-post"></div>
+
+<div id="ticket-post-wrapper">
+  <h3><%= @user.username %>'s ticket posts:</h3>
+  <div id="ticket-post">
+    <% @user.tickets.each do |ticket| %>
+      <a href='tickets/<%= ticket.id %>'>artist: <%= ticket.artist %> | location: <%= ticket.location %> |
+      date: <%= ticket.date %> |
+      price: $<%= ticket.price %>
+      </a>
+    <% end %>
+  </div>
+</div>

@@ -12,6 +12,31 @@ th {
   text-align: left;
 }
 
+#ticket-post-wrapper {
+  border: solid 1px black;
+  height: 46em;
+  width: 30em;
+  margin: auto;
+  position: relative;
+  top: 6vw;
+  text-align: center;
+  background-color: #e0e0e0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#ticket-post-wrapper a {
+  display: block;
+  margin: 2em;
+  text-decoration: none;
+}
+
+#ticket-post-wrapper a:hover {
+  color: lightblue;
+}
+
 #sign_up {
   border: 1px lightblue solid;
   width: 20em;
@@ -26,11 +51,11 @@ th {
 }
 
 
-
 h1, h3 {
   margin: auto;
   text-align: center;
   margin-bottom: 1em;
+  margin-top:  1em;
 }
 
 #login_form {
@@ -39,7 +64,7 @@ h1, h3 {
   margin: auto;
   text-align: center;
   padding: 1em;
-  margin-top: 1em
+  margin-top: 1em;
 }
 
 
@@ -64,3 +89,4 @@ h1, h3 {
   width: 40%;
   border: solid 1px black;
 };
+
