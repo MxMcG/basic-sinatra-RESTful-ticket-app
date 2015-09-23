@@ -1,4 +1,26 @@
 $(document).ready(function() {
+
+  // $('a.delete-link').on('click', function(e){
+
+  $('div#ticket-post').on('click', 'a.delete-link', function(e){
+    e.preventDefault();
+
+    var ticket = $(this).prev(),
+        link = $(this);
+
+    $.ajax({
+      url: $(this).attr('href'),
+      method: 'delete'
+    })
+
+    .done(function(){
+      ticket.remove();
+      link.remove();
+      // console.log('somtehng was deleted!');
+      // console.log(arguments);
+    })
+  })
+
   // This is called after the document has loaded in its entirety
   // This guarantees that any elements we bind to will exist on the page
   // when we try to bind to them
@@ -36,6 +58,7 @@ $(document).ready(function() {
         })
         .done(function(response){
           console.log(response);
+          //response is a partial
           $('#ticket-post').append(response);
           $('#new-ticket-form').remove();
 

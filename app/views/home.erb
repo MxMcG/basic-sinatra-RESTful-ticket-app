@@ -14,7 +14,7 @@
       date: <%= ticket.date %> |
       price: $<%= ticket.price %>
       </a>
-      <a href='/users/tickets/<%= ticket.id %>'>Delete this post</a>
+      <a class="delete-link" href='/users/<%= @user.id %>/tickets/<%= ticket.id %>'>Delete this post</a>
     <% end %>
   </div>
 

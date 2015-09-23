@@ -24,11 +24,17 @@ get '/tickets/:id' do
   erb :'/tickets/ticket'
 end
 
-delete '/users/ticket/:id/' do
+delete '/users/:id/tickets/:id' do
   @ticket = Ticket.find_by(id: params[:id])
+  p '&' * 100
   p @ticket
   @ticket.destroy
 
+  if request.xhr?
+    "ticket was deleted!"
+  else
+    redirect 'users/:id'
+  end
 end
 
 # next, add ticket feed page
