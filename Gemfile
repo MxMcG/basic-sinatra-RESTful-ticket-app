@@ -18,6 +18,8 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'bcrypt'
+gem 'aws-sdk'
+gem "paperclip", "~> 2.3"
 
 group :test do
   gem 'faker'

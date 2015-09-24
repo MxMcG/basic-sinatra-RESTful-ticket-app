@@ -1,5 +1,5 @@
 get '/' do
   # Look in app/views/index.erb
   @tickets = Ticket.all
-  erb :index
+  erb :index, locals: {tickets: @tickets}
 end

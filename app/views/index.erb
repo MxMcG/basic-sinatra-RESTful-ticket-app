@@ -10,7 +10,7 @@
   <% @tickets.each do |ticket| %>
 
     <% if ticket.user != nil %>
-    <h3>info: <a href="/tickets/<%= ticket.id %>"><%= ticket.artist + " | " + ticket.location + " | " + ticket.date + " | " + ticket.price %></a><br> posted by: <a href="/users/<%= ticket.user.id %>"><%= ticket.user.username %></a>
+    <h3>info: <a href="/tickets/<%= ticket.id %>"><%= ticket.artist + " | " + ticket.location + " | " + ticket.date + " | " + ticket.price %></a><br> posted by: <a href="/users/<%= ticket.user.id %>/view"><%= ticket.user.username %></a>
     </h3>
     <% end %>
   <% end %>

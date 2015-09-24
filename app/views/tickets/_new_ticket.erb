@@ -1,4 +1,4 @@
-<div id="ticket-post-item">
+<div id="user-ticket<%= @ticket.id %>">
   <a href="/tickets/<%= @ticket.id%>">artist: <%= @ticket.artist %> | location: <%= @ticket.location %> | date: <%= @ticket.date %> | price: $<%= @ticket.price %></a>
   <a href='/users/<%= @user.id %>/tickets/<%= @ticket.id %>/delete'>Delete this post</a>
 </div>

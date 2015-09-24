@@ -1,0 +1,11 @@
+
+<div id="view-ticket-wrapper">
+  <h4>This ticket is posted by: <%= @ticket.user.username %>.</h4>
+  <div id="view-ticket">
+    <h3><%= @ticket.artist %></h3>
+      <h3><%= @ticket.date %></h3>
+      <h3><%= @ticket.location %></h3>
+      <h3><%= @ticket.time %></h3>
+      <h3><%= @ticket.price %></h3>
+  </div>
+</div>

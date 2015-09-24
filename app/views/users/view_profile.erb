@@ -1,9 +1,9 @@
-<h1>Hello, <%= @user.username %> welcome to tixzoo!</h1>
+<!-- adjust to make view profile work. -->
 
-<h3>Your registered email: <%= @user.email %></h3>
-<a href="/sessions/logout">logout</a><br>
-<a href="/">home</a>
-<h3>Would you like to <a id="new-post-link" href="/users/<%= @user.id %>/tickets/new">post a ticket?</h3></a>
+<h1>Check out, <%= @ticket.user.username %>'s profile!</h1>
+
+
+<a href="/sessions/logout">logout</a>
 
 <div id="new-ticket"></div>
 

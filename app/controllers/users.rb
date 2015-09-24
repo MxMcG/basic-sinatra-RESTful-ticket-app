@@ -1,9 +1,6 @@
-enable :session
-# adds new user
 
 get '/users/signup' do
-  @user = User.new
-  erb :'users/signup'
+  erb :"/users/signup"
 end
 
 post '/users' do
@@ -38,13 +35,18 @@ get '/users/:id' do
   @user = User.find(params[:id])
   if session[:user_id] && session[:user_id].to_s == params[:id]
        erb :home
-     else
+  else
        redirect '/users/login'
-     end
+  end
+end
+
+get '/users/:id/view' do # add view profile logic
+  erb :view_profile
 end
 
 # logout route
 
 get '/sessions/logout' do
-  erb :logout
+  session.destroy
+  redirect '/'
 end

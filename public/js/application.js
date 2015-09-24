@@ -1,32 +1,6 @@
 $(document).ready(function() {
 
-  // $('a.delete-link').on('click', function(e){
-
-  $('div#ticket-post').on('click', 'a.delete-link', function(e){
-    e.preventDefault();
-
-    var ticket = $(this).prev(),
-        link = $(this);
-
-    $.ajax({
-      url: $(this).attr('href'),
-      method: 'delete'
-    })
-
-    .done(function(){
-      ticket.remove();
-      link.remove();
-      // console.log('somtehng was deleted!');
-      // console.log(arguments);
-    })
-  })
-
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  $('h3 a').on('click', function(event) {
+  $('h3 #new-post-link').on('click', function(event) {
     event.preventDefault();
 
     var path = $(this).attr('href');
@@ -37,18 +11,21 @@ $(document).ready(function() {
             dataType: "html"
     })
     .done(function(response){
-      if (typeof $('#new-ticket-form') !== undefined){
-        $('#new-ticket-form').remove();
-        $('#new-ticket').append(response);
-      }else{
-        $('#new-ticket').append(response);
-      }
-      $('#new-ticket-form form').submit("click",function(event) {
+        if (typeof $('#new-ticket-form') !== undefined){
+          $('#new-ticket-form').remove();
+          $('#new-ticket').append(response);
+        }else{
+          $('#new-ticket').append(response);
+        }
+
+
+
+
+        $('#new-ticket-form form').submit("click", function(event) {
         event.preventDefault();
 
         var path = $(this).attr('action')
         var ticketData = $(this).serialize();
-
 
         $.ajax({
               url: path,
@@ -57,20 +34,62 @@ $(document).ready(function() {
               data: ticketData
         })
         .done(function(response){
-          console.log(response);
-          //response is a partial
-          $('#ticket-post').append(response);
-          $('#new-ticket-form').remove();
+            console.log(response);
+            //response is a partial
+            $('#ticket-post').append(response);
+            $('#new-ticket-form').remove();
 
-          // next append new ticket to the home page and add to ticket feed (create ticket post)
+
+
+
+        // $('div#ticket-post').on('click', 'a.delete-link', function(e){
+        //     e.preventDefault();
+
+        //     var ticket = $(this).parent();
+
+        //     $.ajax({
+        //       url: $(this).attr('href'),
+        //       method: 'delete'
+        //     })
+
+        //     .done(function(response){
+        //       ticket.remove();
+
+        //     })
+        //   })
+
+
+
+
         })
+      });
 
 
 
-      }); // end line 20
+    }) // end done
+  }); // end original ajax
 
-    }) // end done line 17
 
-  }); // end line 7
+
+$('div#ticket-post').on('click', 'a.delete-link', function(e){
+    e.preventDefault();
+
+    var ticket = $(this).parent();
+
+
+    $.ajax({
+      url: $(this).attr('href'),
+      method: 'delete'
+    })
+
+    .done(function(response){
+      ticket.remove();
+
+      // console.log('somtehng was deleted!');
+      // console.log(arguments);
+    })
+  })
+
+
 
 }); //end doc ready

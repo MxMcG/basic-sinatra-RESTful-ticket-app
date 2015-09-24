@@ -12,8 +12,9 @@ end
 post '/users/:id/tickets/new' do
   if request.xhr?
     get_user
+    p "&" * 80
+    p params[:new_ticket]
     @ticket = @user.tickets.create(params[:new_ticket])
-    p '8' * 100
     p @ticket.id
       return erb :'tickets/_new_ticket', layout: false
   end
@@ -21,19 +22,14 @@ end
 
 get '/tickets/:id' do
   @ticket = Ticket.find_by(id: params[:id])
-  erb :'/tickets/ticket'
+  erb :'/tickets/view_ticket'
 end
 
-delete '/users/:id/tickets/:id' do
+delete '/users/:user_id/tickets/:id/delete' do
   @ticket = Ticket.find_by(id: params[:id])
-  p '&' * 100
-  p @ticket
-  @ticket.destroy
-
+  @user = User.find_by(id: params[:user_id])
   if request.xhr?
-    "ticket was deleted!"
-  else
-    redirect 'users/:id'
+    @ticket.destroy
   end
 end
 
