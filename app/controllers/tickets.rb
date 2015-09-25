@@ -21,16 +21,24 @@ post '/users/:id/tickets/new' do
 end
 
 get '/tickets/:id' do
-  @ticket = Ticket.find_by(id: params[:id])
+  get_ticket
+  get_user
   erb :'/tickets/view_ticket'
 end
 
 delete '/users/:user_id/tickets/:id/delete' do
-  @ticket = Ticket.find_by(id: params[:id])
+  get_ticket
   @user = User.find_by(id: params[:user_id])
   if request.xhr?
     @ticket.destroy
   end
+end
+
+get '/tickets/:id/buy' do
+  p get_ticket
+  p "*" * 80
+  p get_user
+  erb :'/tickets/buy_ticket'
 end
 
 # next, add ticket feed page

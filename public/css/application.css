@@ -26,7 +26,11 @@ th {
   width: 40%;
   border: 1px black solid;
   margin: auto;
+  text-align: center;
+  padding: 1em;
 };
+
+
 
 a {
   text-decoration: none;
@@ -55,6 +59,11 @@ a {
   border-radius: 4px;
 }
 
+#buy-button {
+  background-color: lightblue;
+  width: 8em;
+  margin: auto;
+}
 
 h1, h3 {
   margin: auto;
@@ -81,6 +90,7 @@ h1, h3 {
   padding: 1em;
   margin-top: 1em;
 }
+
 
 
 #login_form input {

@@ -22,5 +22,10 @@ helpers do
     @user = User.find(session[:user_id])
   end
 
+  def get_ticket
+    @ticket = Ticket.find_by(id: params[:id])
+  end
+
+
 
 end
