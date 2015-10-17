@@ -1,7 +1,6 @@
 require 'aws-sdk'
 
-access_key = "AKIAJNZT4567VK7EQHXQ"
-secret_key = "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"
+
 
 Aws.config.update({
   region: 'us-east-1',
